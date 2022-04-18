@@ -34,8 +34,7 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					s = va_arg(p, char *);
-					if (s != NULL)
-						bytes_written += write(1, s, strlen(s));
+					bytes_written += write(1, s, strlen(s));
 					break;
 				case 'd':
 					d = va_arg(p, int);
