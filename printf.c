@@ -13,6 +13,7 @@ int _printf(const char *format, ...)
 	int  d, bytes_written = 0;
 	char c, *s;
 	unsigned int u;
+	short int i;
 
 	if (format == NULL)
 		return (0);
@@ -37,9 +38,12 @@ int _printf(const char *format, ...)
 					bytes_written += write(1, s, strlen(s));
 					break;
 				case 'd':
-				case 'i':
 					d = va_arg(p, int);
 					bytes_written += write_nbr(d);
+					break;
+				case 'i':
+					i = va_arg(p, int);
+					bytes_written += write_nbr(i);
 					break;
 				case 'u':
 					u = va_arg(p, unsigned int);
