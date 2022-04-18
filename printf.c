@@ -38,6 +38,7 @@ int _printf(const char *format, ...)
 						bytes_written += write(1, s, strlen(s));
 					break;
 				case 'd':
+				case 'i':
 					d = va_arg(p, int);
 					bytes_written += write_nbr(d);
 					break;
